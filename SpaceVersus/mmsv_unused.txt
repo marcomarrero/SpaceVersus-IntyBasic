@@ -1,0 +1,378 @@
+'Unused/test/eliminated
+
+'--- Tile isometric experiment. Too distracting. I hate not having palette like in 8-bit Ataris
+'FOR x=0 TO 2
+'		PRINT AT y color FG_BLUE,"\256\257\258 \256\257\258 \256\257\258 \256\257\258 \256\257\258":y=y+20
+'		PRINT AT y color FG_BLUE," \256\257\258 \256\257\258 \256\257\258 \256\257\258 \256\257":y=y+20
+'		PRINT AT y color FG_BLUE,"\258 \256\257\258 \256\257\258 \256\257\258 \256\257\258 \256":y=y+20
+'		PRINT AT y color FG_BLUE,"\257\258 \256\257\258 \256\257\258 \256\257\258 \256\257\258 ":y=y+20
+'	NEXT x
+
+
+ScrollLeft:	
+	ScrollA=0
+	ScrollX = ScrollX + 1:	
+	IF ScrollX <> 8 THEN SCROLL ScrollX, ScrollY, ScrollD:GOTO Drawing
+	ScrollX = 0
+
+	PRINT AT 19 color CS_BLUE,"\256"		
+	PRINT AT 39 color CS_BLUE,"\258"
+	PRINT AT 59 color CS_BLUE,"\257"
+	PRINT AT 79 color CS_BLUE,"\256"		
+	PRINT AT 139 color CS_BLUE,"\258"
+	PRINT AT 159 color CS_BLUE,"\257"
+	PRINT AT 179 color CS_BLUE,"\256"		
+	REM PRINT AT 189 color CS_BLUE," "
+	
+	SCROLL ScrollX, ScrollY, ScrollD
+	GOTO Drawing
+
+Graphics0:
+	BITMAP ".......x"	
+	BITMAP "......xx"	
+	BITMAP ".....xxx"	
+	BITMAP "....xxxx"	
+	BITMAP "...xxxxx"	
+	BITMAP "..xxxxxx"	
+	BITMAP ".xxxxxxx"	
+	BITMAP "xxxxxxxx"	
+
+Graphics1:
+	BITMAP "xxxxxxxx"
+	BITMAP "xxxxxxx."
+	BITMAP "xxxxxx.."	
+	BITMAP "xxxxx..."	
+	BITMAP "xxxx...."	
+	BITMAP "xxx....."	
+	BITMAP "xx......"	
+	BITMAP "x......."	
+	
+	BITMAP ".......x"	
+	BITMAP "......x."	
+	BITMAP ".....x.x"	
+	BITMAP "....x.x."	
+	BITMAP "...x.x.x"	
+	BITMAP "..x.x.x."	
+	BITMAP ".x.x.x.x"	
+	BITMAP "x.x.x.x."	
+		
+	MUSIC C4,E4,G4,M1
+	MUSIC C4,E4,A4,M2
+	MUSIC C4,E4,B4,M2
+	
+	MUSIC C4,F4,A4,M1
+	MUSIC C4,F4,B4,M2
+	MUSIC C4,F4,C5,M2
+	
+	MUSIC D4,G4,B4,M1
+	MUSIC D4,G4,C5,M2
+	MUSIC D4,G4,D5,M2
+
+	MUSIC C4,F4,C5,M3
+	MUSIC C4,F4,B4,M2
+	MUSIC C4,F4,A4,M2
+
+'==================================
+	MUSIC C3,E3,G3,M3
+	MUSIC C3,E3,A3,M2
+	MUSIC C3,E3,B3,M3
+	
+	MUSIC C3,F3,A3,M3
+	MUSIC C3,F3,B3,M2
+	MUSIC C3,F3,C4,M3
+	
+	MUSIC D3,G3,B3,M3
+	MUSIC D3,G3,C4,M3
+	MUSIC D3,G3,D4,M3
+
+	MUSIC C3,F3,C4,M3
+	MUSIC C3,F3,B3,M3
+	MUSIC C3,F3,A3,M3
+	
+
+'BulletTestAdjust: PROCEDURE		
+'	PRINT AT 40 COLOR CS_DARKGREEN, "bx1:",<5>#bx1," by1:",<5>#by1
+'	PRINT AT 60 COLOR CS_DARKGREEN, "P1h:",<3>P1ShootHeld," p1b:",<3>P1shoot
+	
+'	PRINT AT 180 COLOR CS_RED, "bx2:",<5>#bx2," by2:",<5>#by2
+'	PRINT AT 200 COLOR CS_RED, "P2h:",<3>P2ShootHeld," p2b:",<3>P2shoot
+	
+'	'CONT1.KEY (0-9,10=clear,11=enter,12=n/a)
+'	'IF DebugW>0 THEN FOR x=0 TO DebugW:WAIT:NEXT
+'	RETURN
+'END
+	
+'DrawTest: PROCEDURE
+'	CLS
+'	PRINT AT 0 COLOR CS_BLUE,"123456789"
+'	PRINT AT 20 COLOR CS_BLUE,"2\95\95\95\95"
+'	PRINT AT 40 COLOR CS_BLUE,"3\95\95\95\95"
+'	PRINT AT 60 COLOR CS_BLUE,"4\95\95\95\95"
+'	PRINT AT 80 COLOR CS_BLUE,"5\95\95\95\95"
+'	PRINT AT 100 COLOR CS_BLUE,"6\95\95\95\95"
+'	PRINT AT 120 COLOR CS_BLUE,"7"
+'	DrawX=1:DrawY=1:RESTORE DrawX		
+'	DrawCard=95
+'	DrawColor=FG_RED
+'	GOSUB GWDraw
+'DrawLoop:
+'	WAIT
+'	GOTO DrawLoop
+'	RETURN
+'END
+
+Crash: PROCEDURE
+	PRINT AT 0,"!"
+Crash4ever: WAIT:GOTO Crash4ever
+END
+
+========================================================================
+		
+		
+	BITMAP "        "	'273.2
+	BITMAP "        "	
+	BITMAP " mmmmmmm"
+	BITMAP "mm   mm "
+	BITMAP " mm  mm "
+	BITMAP "  mm mm "
+	BITMAP "mmm  mm "
+	BITMAP "        "	
+'18	
+	BITMAP "        "	'274.3
+	BITMAP "        "	
+	BITMAP " mmm   "
+	BITMAP "mm mm mm"
+	BITMAP "mmmmm mm"
+	BITMAP "mm mm mm"
+	BITMAP "mm mm  m"
+	BITMAP "        "
+'19	
+	BITMAP "        "	'275.4
+	BITMAP "        "
+	BITMAP "mmm  mmm"
+	BITMAP "     mm "
+	BITMAP " mmm mmm"
+	BITMAP "  mm mm "
+	BITMAP "mmm  mmm"	
+	BITMAP "        "				
+		
+	BITMAP " M M M M"	'271
+	BITMAP "M M M M "	
+	BITMAP " M M M M"	
+	BITMAP "MMMMMMMM"	
+	BITMAP "        "	
+	BITMAP "M M M M "	
+	BITMAP " M M M M"	
+	BITMAP "M M M M "	
+
+
+			PRINT at 131 color CS_WHITE,"Over"		
+		IF Players=0 THEN
+			PRINT at 100 color CS_WHITE,"Game"					
+		ELSE
+			PRINT at 100 color CS_WHITE,"Round"			
+			IF CPURound>1 THEN 
+				IF e1=0 THEN 
+					PRINT at 131 color CS_WHITE,"Lost" 
+				ELSE 
+					PRINT at 131 color CS_WHITE,"Win!"
+				END IF
+			END IF
+		END IF
+		
+			'---EquXX is a sprite if speed <8 otherwise it's a card
+	SPRITE 4, x3 + VISIBLE, EQUXXY, SPR_EQUXX					'16	
+	'IF x3old<>255 THEN
+	'	'SPRITE 4,0,0,0
+	'	PRINT AT x3old COLOR CS_BLACK,"X"		'"\264"
+	'	PRINT AT x3 COLOR CS_PINK,"\264"
+	'	x3old=x3	
+	'	SPRITE 4, x3 + VISIBLE, EQUXXY + ZOOMY2, SPR_EQUXX		
+	'ELSE		
+	'END IF
+		
+		
+
+
+'Sound effects
+	
+'DATA 8,4,8,16,8,16,32,16,32,64,32,64,128,64,128,0
+'DATA 100,50,20,10,200,100,50,10,240,200,100,50,20,0 	
+'DATA 7,31,11,21,31,41,51,81,60,100,88,21,0	
+'DATA 4,16,8,4,32,16,8,64,32,128,64,32,128,0	 'piiiun2
+'DATA 8,4,8,16,8,16,32,16,32,64,32,64,128,64,128,0 'piiiun
+'DATA 11,21,31,201,181,171,41,51,61,161,151,141,71,151,0 'shot
+'DATA 50,100,50,100,150,100,150,200,150,200,255,200,0 'sounds like when Dk Junior stomps	
+'DATA 15,21,22,21,18,21,22,23,22,21,20,21,22,23,0 'sounds like donkey kong atari jump
+'DATA 100,50,20,10,200,100,50,10,240,200,100,50,20,0 'sounds like arkanoid
+'DATA 90,80,70,60,50,40,30,20,10,8,4,3,2,1,0  'sound like popeye punching bottles
+
+
+
+
+		#DrawColor=CS_DARKGREEN	'FOR y=2 to 8
+			y=2:GOSUB DrawBillboard1:y=8:GOSUB DrawBillboard1			
+			y=3:GOSUB DrawBillboard2:y=7:GOSUB DrawBillboard2
+		
+		#DrawColor=CS_GREEN
+			y=4:GOSUB DrawBillboard1:y=6:GOSUB DrawBillboard1
+			y=5:GOSUB DrawBillboard2
+			
+			\=============================================================
+					#DrawColor=CS_LIGHTBLUE
+			y=2:GOSUB DrawBillboard2:y=8:GOSUB DrawBillboard1					
+		#DrawColor=CS_BLUE		
+			y=3:GOSUB DrawBillboard2:y=7:GOSUB DrawBillboard2
+			y=4:GOSUB DrawBillboard1:y=6:GOSUB DrawBillboard1
+			y=5:GOSUB DrawBillboard2
+
+===================================================================================================
+'"X-1000" follows player ocassionally, only shoots when close, will shield from laser, gets closer!
+CPU7:
+	P1shoot=1: P1ShootHeld=0:P1Shield=0
+	if CPUstat=0 THEN p1Right=1:p1Left=0 ELSE p1Right=0:p1Left=1
+	
+	'turn at corners, turn if hit
+	if #x1=CMINX then 
+		CPUstat=0 
+		p1Left=0
+		p1Right=1
+		
+	ELSEif #x1=CMAXX THEN 
+		CPUstat=1
+		p1Left=1
+		p1Right=0
+		
+	ELSE 		
+		IF #boomX1 THEN 
+			CPUstat=XOR CPUstat	'turn if hit
+		ELSE
+			'random turn
+			if counter2=10 THEN
+				counter2=0
+				if #x1<#x2 THEN CPUstat=0 ELSE CPUstat=1:IF P1Closer<32 THEN P1Closer=P1Closer+1		
+			END IF
+		END IF
+	END IF
+	
+	IF ABS(#x1-#x2)>5 THEN 
+		IF P2Damage=PLaserDamage THEN P1Shield=1 ELSE P1shoot=0	'Shield if P2 shot laser	
+	END IF
+	RETURN	
+	
+=====================================================
+
+	
+		MUSIC	g4, c2,g5
+	MUSIC	e4, S,f5
+	MUSIC	c4, S,e5
+	
+	MUSIC	g4, c3,d5
+	MUSIC	e4, S,c5
+	MUSIC	c4, S,d5
+
+	MUSIC	g4, c2,e5
+	MUSIC	e4, S,d5
+	MUSIC	c4, S,c5
+	
+	MUSIC	g4, c3,d5
+	MUSIC	e4, S,e5
+	MUSIC	c4, S,f5
+'---	
+	MUSIC	g4, g2,g5
+	MUSIC	d4, S,f5
+	MUSIC	b3, S,d5
+	
+	MUSIC	g4, g3,c5
+	MUSIC	d4, S,b4
+	MUSIC	b3, S,c5
+
+	MUSIC	g4, g2,d5
+	MUSIC	d4, S,c5
+	MUSIC	b3, S,b4
+
+	MUSIC	g4, g3,c5
+	MUSIC	d4, S,d5
+	MUSIC	b3, S,e5
+	
+	
+	'----DrawPlayer1 VS info-----'IF Players=1 THEN 'PRINT AT 157 COLOR CS_BLUE, "Round ", <>CPUround		
+		'DrawX=8:'#DrawColor=CS_CYAN:y=2:GOSUB DrawBillboard2:y=8:GOSUB DrawBillboard1'#DrawColor=CS_LIGHTBLUE:y=3:GOSUB DrawBillboard2:y=7:GOSUB DrawBillboard2
+		'#DrawColor=CS_PURPLE:y=4:GOSUB DrawBillboard1:y=6:GOSUB DrawBillboard1'#DrawColor=CS_BLUE:y=5:GOSUB DrawBillboard2		
+		'DrawCard=95:DrawX=DrawX+1:DrawY=3:#DrawColor=CS_BLACK:DrawCmd=CPURound:GOSUB DrawCmdGo'END IF'Countdown drawing routine
+
+'SP_Boom:
+'DATA 33,31,39,37,35,33,31,39,37,0
+
+	CONST SCROLL_L = 1
+	CONST SCROLL_R = 2
+	CONST SCROLL_U = 3
+	CONST SCROLL_D = 4
+	
+	ScrollA = 0
+	ScrollX = 0
+	ScrollY = 0
+	ScrollD = 2
+	
+	
+'---------------- sound ---------------------------
+'SOUND=================================== SOUND ========================SOUND====
+'IF SMusic=0 THEN 	'	IF y AND 1 THEN Svolume(0)=(Svolume(0) - 1) AND 15	'only decrease volume on ODD values	'	SOUND 0, #Sfreq, Svolume(0) 'ELSE
+'The original sound player used 8-bit data values, odd values to decrease volume
+IF Players=3 THEN GOTO NoSoundInAttract
+	IF #Slabel(0) THEN
+		#Sfreq=PEEK(#Slabel(0)):#Slabel(0)=#Slabel(0)+2
+		IF #Sfreq=0 THEN #Slabel(0)=0:SOUND 0,1,0:GOTO Channel1			
+		IF #SLabel(1)=0 THEN SOUND 0, #Sfreq, 12 ELSE IF counter1=0 THEN SOUND 0, #Sfreq, 12
+	END IF
+	
+Channel1:
+	IF #Slabel(1) THEN
+		#Sfreq=PEEK(#Slabel(1)):#Slabel(1)=#Slabel(1)+2
+		IF #Sfreq=0 THEN #Slabel(1)=0:SOUND 0,1,0:GOTO ChannelX
+		IF #SLabel(0)=0 THEN SOUND 0, #Sfreq, 12 ELSE IF counter1 THEN SOUND 0, #Sfreq, 12
+	END IF
+
+ChannelX:
+	IF #SLabel(0)+#SLabel(1)=0 THEN SOUND 0,1,0	
+	SMusicWait=SMusicWait-1
+	IF SMusicWait=0 THEN	
+		if e1<e2 then SMusicWait = e1+10 ELSE SMusicWait = e2+10
+		#Sfreq2=PEEK(#Slabel(2)):#Slabel(2)=#Slabel(2)+2
+				
+		IF SMusicWait>32 THEN 
+			Svolume(2)=BgSoundMin 			
+			IF #Sfreq2=0 THEN #Slabel(2)=VARPTR SP_Backgr(0)
+		ELSE		
+			Svolume(2)=BgSoundMin+4			
+			IF #Sfreq2=0 THEN #Slabel(2)=VARPTR SP_Backgr2(0)
+		END IF				
+	END IF
+	Svol2=Svol2-1:IF Svol2=0 THEN Svol2=BgSoundVolDelay:IF Svolume(2)<BgSoundVol THEN Svolume(2)=Svolume(2)+1		
+	SOUND 1, #Sfreq2, Svolume(2)	
+'END IF
+-------------------------------
+CPU4:
+	P1shoot=1: P1ShootHeld=0:p1shield=0
+	if CPUstat=0 THEN p1Right=1:p1Left=0 ELSE p1Right=0:p1Left=1
+	if #x1=CMINX then CPUstat=0 ELSE if #x1=CMAXX THEN CPUstat=1
+	
+	'random turn, towards player
+	if counter2=10 THEN
+		counter2=0
+		if #x1<#x2 THEN CPUstat=0 ELSE CPUstat=1
+	END IF
+	IF ABS(#x1-#x2)>5 THEN 
+		IF P2Damage=PLaserDamage THEN P1Shield=1 ELSE P1shoot=0	'Shield if P2 shot laser close	
+	END IF
+	RETURN
+	
+BadGuy9:				'281.10
+	BITMAP "M  M  M "	
+	BITMAP "MM M MM "	
+	BITMAP " MMMMM  "	
+	BITMAP "MMM MMM "	
+	BITMAP " M M M  "	
+	BITMAP "MMMMMMM "	
+	BITMAP "MMM MMM "	
+	BITMAP "M M M M "	
